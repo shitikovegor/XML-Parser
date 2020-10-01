@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TouristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns="http://www.example.com/TouristVouchers"
+                 xsi:schemaLocation="http://www.example.com/TouristVouchers TouristVouchers.xsd">
+
+    <Voucher name="Spain tour" type="Excursion">
+        <country>Spain</country>
+        <days>3</days>
+        <nights>4</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>4</stars>
+            <food-type>BB</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>false</wifi>
+                <refrigerator>false</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>500</cost>
+    </Voucher>
+
+    <Voucher name="Turkey tour" type="Recreation">
+        <country>Turkey</country>
+        <days>7</days>
+        <nights>8</nights>
+        <transport>Plain</transport>
+        <hotel-characteristic>
+            <stars>5</stars>
+            <food-type>AI</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>650</cost>
+    </Voucher>
+
+    <Voucher name="Lviv weekend" type="Excursion">
+        <country>Ukraine</country>
+        <days>2</days>
+        <nights>3</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>3</stars>
+            <food-type>SC</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>false</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>false</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>120</cost>
+    </Voucher>
+
+    <Voucher name="Sanatorium" type="Therapy">
+        <country>Belarus</country>
+        <days>0</days>
+        <nights>5</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>3</stars>
+            <food-type>FB</food-type>
+            <hotel-room>
+                <guests-number>1</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>false</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>350.5</cost>
+    </Voucher>
+
+    <Voucher name="New Year in Warsaw" type="New Year">
+        <country>Poland</country>
+        <days>2</days>
+        <nights>2</nights>
+        <transport>Car</transport>
+        <hotel-characteristic>
+            <stars>2</stars>
+            <food-type>BB</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>199.9</cost>
+    </Voucher>
+
+    <Voucher name="Vacation-tour" type="Recreation">
+        <country>Egypt</country>
+        <days>7</days>
+        <nights>8</nights>
+        <transport>Plain</transport>
+        <hotel-characteristic>
+            <stars>7</stars>
+            <food-type>AI</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>yes</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>1500</cost>
+    </Voucher>
+
+    <Voucher name="Weekend tour$" type="Cruise">
+        <country>Greece</country>
+        <days>2</days>
+        <nights>3</nights>
+        <transport>Ship</transport>
+        <hotel-characteristic>
+            <stars>3</stars>
+            <food-type>FB</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>0</cost>
+    </Voucher>
+
+    <Voucher name="" type="Shopping">
+        <country>Italy</country>
+        <days>1</days>
+        <nights>366</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>3</stars>
+            <food-type>SC</food-type>
+            <hotel-room>
+                <guests-number>1</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>false</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>99.9</cost>
+    </Voucher>
+
+    <Voucher name="Sea tour" type="Recreation">
+        <country>Spain</country>
+        <days>6</days>
+        <nights>7</nights>
+        <transport>Plain</transport>
+        <hotel-characteristic>
+            <stars>5</stars>
+            <food-type>FB</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>false</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>785</cost>
+    </Voucher>
+
+    <Voucher name="Excursion tour" type="Excursion">
+        <country>Belarus</country>
+        <days>1</days>
+        <nights>0</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars></stars>
+            <food-type></food-type>
+            <hotel-room>
+                <guests-number></guests-number>
+                <tv></tv>
+                <air-conditioning></air-conditioning>
+                <wifi></wifi>
+                <refrigerator></refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>65</cost>
+    </Voucher>
+
+    <Voucher name="Therapy tour" type="Therapy">
+        <country>Israel</country>
+        <days>3</days>
+        <nights>4</nights>
+        <transport>Train</transport>
+        <hotel-characteristic>
+            <stars>4</stars>
+            <food-type>FB</food-type>
+            <hotel-room>
+                <guests-number>1</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>1865</cost>
+    </Voucher>
+
+    <Voucher name="Therapy tour" type="Therapy">
+        <country>Belarus</country>
+        <days>15</days>
+        <nights>15</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>1</stars>
+            <food-type>FB</food-type>
+            <hotel-room>
+                <guests-number>1</guests-number>
+                <tv>false</tv>
+                <air-conditioning>false</air-conditioning>
+                <wifi>false</wifi>
+                <refrigerator>false</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>150</cost>
+    </Voucher>
+
+    <Voucher name="Cyprus tour" type="Recreation">
+        <country>Cyprus</country>
+        <days>10</days>
+        <nights>11</nights>
+        <transport>Plain</transport>
+        <hotel-characteristic>
+            <stars>4</stars>
+            <food-type>AI</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>840</cost>
+    </Voucher>
+
+    <Voucher name="Minsk excursion" type="Excursion">
+        <country>Belarus</country>
+        <days>1</days>
+        <nights>0</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars></stars>
+            <food-type></food-type>
+            <hotel-room>
+                <guests-number></guests-number>
+                <tv></tv>
+                <air-conditioning></air-conditioning>
+                <wifi></wifi>
+                <refrigerator></refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>25</cost>
+    </Voucher>
+
+    <Voucher name="Shopping tour" type="Shopping">
+        <country>Poland</country>
+        <days>2</days>
+        <nights>3</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>3</stars>
+            <food-type>SC</food-type>
+            <hotel-room>
+                <guests-number>1</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>false</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>86</cost>
+    </Voucher>
+
+    <Voucher name="New year in Prague" type="Christmas">
+        <country>Czech</country>
+        <days>3</days>
+        <nights>4</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>3</stars>
+            <food-type>HB</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>true</air-conditioning>
+                <wifi>true</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>320</cost>
+    </Voucher>
+
+    <Voucher name="Gold ring tour" type="Excursion">
+        <country></country>
+        <days>3</days>
+        <nights>4</nights>
+        <transport>Bus</transport>
+        <hotel-characteristic>
+            <stars>2</stars>
+            <food-type>SC</food-type>
+            <hotel-room>
+                <guests-number>2</guests-number>
+                <tv>true</tv>
+                <air-conditioning>false</air-conditioning>
+                <wifi>false</wifi>
+                <refrigerator>true</refrigerator>
+            </hotel-room>
+        </hotel-characteristic>
+        <cost>350</cost>
+    </Voucher>
+</TouristVouchers>

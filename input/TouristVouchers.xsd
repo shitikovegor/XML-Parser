@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/TouristVouchers"
+        xmlns:tns="http://www.example.com/TouristVouchers" elementFormDefault="qualified">
+
+    <element name="TouristVouchers">
+        <complexType>
+            <sequence>
+                <element name="Voucher" type="tns:Voucher" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Voucher">
+        <sequence>
+            <element name="country">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[a-zA-Z-]"/>
+                    </restriction>
+                </simpleType>
+            </element>
+
+            <element name="days">
+                <simpleType>
+                    <restriction base="int">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="365"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="nights">
+                <simpleType>
+                    <restriction base="int">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="365"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="transport" type="tns:TransportType"/>
+            <element name="hotel-characteristic" type="tns:HotelCharacteristic"/>
+            <element name="cost" type="tns:Cost"/>
+        </sequence>
+        <attribute name="name" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <pattern value="[a-zA-Z0-9-]+"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="type" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Cruise"/>
+                    <enumeration value="Excursion"/>
+                    <enumeration value="New Year"/>
+                    <enumeration value="Recreation"/>
+                    <enumeration value="Shopping"/>
+                    <enumeration value="Therapy"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <simpleType name="TransportType">
+        <restriction base="string">
+            <enumeration value="Bus"/>
+            <enumeration value="Plain"/>
+            <enumeration value="Ship"/>
+            <enumeration value="Train"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="HotelCharacteristic">
+        <sequence>
+            <element name="stars">
+                <simpleType>
+                    <restriction base="int">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="5"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="food-type">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="AI"/>
+                        <enumeration value="BB"/>
+                        <enumeration value="HB"/>
+                        <enumeration value="FB"/>
+                        <enumeration value="SC"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="hotel-room" type="tns:HotelRoom"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Cost">
+        <restriction base="decimal">
+            <minInclusive value="0.1"></minInclusive>
+            <maxInclusive value="999999.9"></maxInclusive>
+        </restriction>
+    </simpleType>
+
+    <complexType name="HotelRoom">
+        <sequence>
+            <element name="guests-number">
+                <simpleType>
+                    <restriction base="int">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="tv" type="boolean"/>
+            <element name="air-conditioning" type="boolean"/>
+            <element name="wifi" type="boolean"/>
+            <element name="refrigerator" type="boolean"/>
+        </sequence>
+    </complexType>
+</schema>
