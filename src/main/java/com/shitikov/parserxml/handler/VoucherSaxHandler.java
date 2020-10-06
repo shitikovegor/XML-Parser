@@ -12,28 +12,30 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SeveralDayVoucherSaxHandler extends DefaultHandler {
+public class VoucherSaxHandler extends DefaultHandler {
     private static Logger logger = LogManager.getLogger();
-    private Set<SeveralDayVoucher> vouchers;
-    private SeveralDayVoucher current;
+    private Set<Voucher> vouchers;
+    private Voucher current;
     private VoucherXmlTag currentEnum = null;
     private EnumSet<VoucherXmlTag> withText;
 
-    public SeveralDayVoucherSaxHandler() {
+    public VoucherSaxHandler() {
         vouchers = new HashSet<>();
         withText = EnumSet.range(VoucherXmlTag.COUNTRY, VoucherXmlTag.REFRIGERATOR);
-        withText.remove(VoucherXmlTag.IS_WITH_GUIDE);
-        withText.remove(VoucherXmlTag.IS_WITH_LUNCH);
     }
 
-    public Set<SeveralDayVoucher> getVouchers() {
+    public Set<Voucher> getVouchers() {
         return vouchers;
     }
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-        if (VoucherXmlTag.SEVERAL_DAY_VOUCHER.getName().equals(localName)) {
-            current = new SeveralDayVoucher();
+        if (VoucherXmlTag.ONE_DAY_VOUCHER.getName().equals(localName)
+                || VoucherXmlTag.SEVERAL_DAY_VOUCHER.getName().equals(localName)) {
+
+            current = (VoucherXmlTag.ONE_DAY_VOUCHER.getName().equals(localName))
+                    ? new OneDayVoucher() : new SeveralDayVoucher();
+
             current.setName(attrs.getValue(VoucherXmlTag.NAME.getName()));
             String tourType = attrs.getValue(VoucherXmlTag.TOUR_TYPE.getName()).replace('-', '_').toUpperCase();
             current.setTourType(TourType.valueOf(tourType));
@@ -47,7 +49,8 @@ public class SeveralDayVoucherSaxHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) {
-        if (VoucherXmlTag.SEVERAL_DAY_VOUCHER.getName().equals(localName)) {
+        if (VoucherXmlTag.ONE_DAY_VOUCHER.getName().equals(localName)
+                || VoucherXmlTag.SEVERAL_DAY_VOUCHER.getName().equals(localName)) {
             vouchers.add(current);
         }
     }
@@ -61,18 +64,19 @@ public class SeveralDayVoucherSaxHandler extends DefaultHandler {
                 case TRANSPORT -> current.setTransportType(TransportType.valueOf(value.toUpperCase()));
                 case DATE -> current.setDate(LocalDate.parse(value));
                 case COST -> current.setCost(new BigDecimal(value));
-                case DAYS -> current.setDays(Integer.parseInt(value));
-                case NIGHTS -> current.setNights(Integer.parseInt(value));
-                case STARS -> current.getHotelCharacteristic().setStars(Integer.parseInt(value));
-                case FOOD_TYPE -> current.getHotelCharacteristic().setFoodType(FoodType.valueOf(value.toUpperCase()));
-                case GUESTS_NUMBER -> current.getHotelCharacteristic().getHotelRoom().setGuestsNumber(Integer.parseInt(value));
-                case TV -> current.getHotelCharacteristic().getHotelRoom().setTv(Boolean.parseBoolean(value));
-                case AIR_CONDITIONING -> current.getHotelCharacteristic().getHotelRoom().setAirConditioning(Boolean.parseBoolean(value));
-                case WIFI -> current.getHotelCharacteristic().getHotelRoom().setWifi(Boolean.parseBoolean(value));
-                case REFRIGERATOR -> current.getHotelCharacteristic().getHotelRoom().setRefrigerator(Boolean.parseBoolean(value));
+                case IS_WITH_LUNCH -> ((OneDayVoucher) current).setWithLunch(Boolean.parseBoolean(value));
+                case IS_WITH_GUIDE -> ((OneDayVoucher) current).setWithGuide(Boolean.parseBoolean(value));
+                case DAYS -> ((SeveralDayVoucher) current).setDays(Integer.parseInt(value));
+                case NIGHTS -> ((SeveralDayVoucher) current).setNights(Integer.parseInt(value));
+                case STARS -> ((SeveralDayVoucher) current).getHotelCharacteristic().setStars(Integer.parseInt(value));
+                case FOOD_TYPE -> ((SeveralDayVoucher) current).getHotelCharacteristic().setFoodType(FoodType.valueOf(value.toUpperCase()));
+                case GUESTS_NUMBER -> ((SeveralDayVoucher) current).getHotelCharacteristic().getHotelRoom().setGuestsNumber(Integer.parseInt(value));
+                case TV -> ((SeveralDayVoucher) current).getHotelCharacteristic().getHotelRoom().setTv(Boolean.parseBoolean(value));
+                case AIR_CONDITIONING -> ((SeveralDayVoucher) current).getHotelCharacteristic().getHotelRoom().setAirConditioning(Boolean.parseBoolean(value));
+                case WIFI -> ((SeveralDayVoucher) current).getHotelCharacteristic().getHotelRoom().setWifi(Boolean.parseBoolean(value));
+                case REFRIGERATOR -> ((SeveralDayVoucher) current).getHotelCharacteristic().getHotelRoom().setRefrigerator(Boolean.parseBoolean(value));
                 default -> throw new EnumConstantNotPresentException(
                         currentEnum.getDeclaringClass(), currentEnum.name());
-//                    logger.log(Level.WARN, "Invalid value.");
             }
         }
         currentEnum = null;
