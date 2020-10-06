@@ -1,1 +1,0 @@
-01.10.2020 16:55:03 [main] ERROR com.shitikov.parserxml.errorHandler.VoucherErrorHandler - 4 : 98 - cvc-elt.1.a: Cannot find the declaration of element 'TouristVouchers'.

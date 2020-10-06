@@ -1,14 +1,18 @@
 package com.shitikov.parserxml.entity;
 
 public enum TransportType {
-    BUS ("Bus"),
-    PLANE ("Plain"),
-    SHIP ("Ship"),
-    TRAIN ("Train");
+    BUS("Bus"),
+    PLANE("Plane"),
+    SHIP("Ship"),
+    TRAIN("Train");
 
-    String name;
+    private String name;
 
     TransportType(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

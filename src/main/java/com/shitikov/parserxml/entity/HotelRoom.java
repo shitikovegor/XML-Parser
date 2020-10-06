@@ -7,6 +7,9 @@ public class HotelRoom {
     private boolean wifi;
     private boolean refrigerator;
 
+    public HotelRoom() {
+    }
+
     public HotelRoom(int guestsNumber, boolean tv, boolean airConditioning, boolean wifi, boolean refrigerator) {
         this.guestsNumber = guestsNumber;
         this.tv = tv;

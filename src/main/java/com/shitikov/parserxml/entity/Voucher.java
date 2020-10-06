@@ -1,22 +1,34 @@
 package com.shitikov.parserxml.entity;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
-public class Voucher {
-    private int name;
+public abstract class Voucher {
+    private String name;
     private TourType tourType;
     private String country;
-    private int days;
-    private int nights;
     private TransportType transportType;
-    private HotelCharacteristic hotelCharacteristic;
+    private LocalDate date;
     private BigDecimal cost;
 
-    public int getName() {
+    public Voucher() {
+    }
+
+    public Voucher(String name, TourType tourType, String country, TransportType transportType,
+                   LocalDate date, BigDecimal cost) {
+        this.name = name;
+        this.tourType = tourType;
+        this.country = country;
+        this.transportType = transportType;
+        this.date = date;
+        this.cost = cost;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public Voucher setName(int name) {
+    public Voucher setName(String name) {
         this.name = name;
         return this;
     }
@@ -39,24 +51,6 @@ public class Voucher {
         return this;
     }
 
-    public int getDays() {
-        return days;
-    }
-
-    public Voucher setDays(int days) {
-        this.days = days;
-        return this;
-    }
-
-    public int getNights() {
-        return nights;
-    }
-
-    public Voucher setNights(int nights) {
-        this.nights = nights;
-        return this;
-    }
-
     public TransportType getTransportType() {
         return transportType;
     }
@@ -66,12 +60,12 @@ public class Voucher {
         return this;
     }
 
-    public HotelCharacteristic getHotelCharacteristic() {
-        return hotelCharacteristic;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public Voucher setHotelCharacteristic(HotelCharacteristic hotelCharacteristic) {
-        this.hotelCharacteristic = hotelCharacteristic;
+    public Voucher setDate(LocalDate date) {
+        this.date = date;
         return this;
     }
 
@@ -95,13 +89,7 @@ public class Voucher {
 
         Voucher other = (Voucher) obj;
 
-        if (name != other.name) {
-            return false;
-        }
-        if (days != other.days) {
-            return false;
-        }
-        if (nights != other.nights) {
+        if (name != null ? !name.equals(other.name) : other.name != null) {
             return false;
         }
         if (tourType != other.tourType) {
@@ -113,7 +101,7 @@ public class Voucher {
         if (transportType != other.transportType) {
             return false;
         }
-        if (hotelCharacteristic != null ? !hotelCharacteristic.equals(other.hotelCharacteristic) : other.hotelCharacteristic != null) {
+        if (date != null ? !date.equals(other.date) : other.date != null) {
             return false;
         }
         return cost != null ? cost.equals(other.cost) : other.cost == null;
@@ -121,13 +109,11 @@ public class Voucher {
 
     @Override
     public int hashCode() {
-        int result = name;
+        int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (tourType != null ? tourType.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + days;
-        result = 31 * result + nights;
         result = 31 * result + (transportType != null ? transportType.hashCode() : 0);
-        result = 31 * result + (hotelCharacteristic != null ? hotelCharacteristic.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (cost != null ? cost.hashCode() : 0);
         return result;
     }
@@ -135,13 +121,11 @@ public class Voucher {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Voucher{");
-        sb.append("name=").append(name);
+        sb.append("name='").append(name).append('\'');
         sb.append(", tourType=").append(tourType);
         sb.append(", country='").append(country).append('\'');
-        sb.append(", days=").append(days);
-        sb.append(", nights=").append(nights);
         sb.append(", transportType=").append(transportType);
-        sb.append(", hotelCharacteristic=").append(hotelCharacteristic);
+        sb.append(", date=").append(date);
         sb.append(", cost=").append(cost);
         sb.append('}');
         return sb.toString();

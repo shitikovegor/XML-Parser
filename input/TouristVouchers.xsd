@@ -2,10 +2,14 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/TouristVouchers"
         xmlns:tns="http://www.example.com/TouristVouchers" elementFormDefault="qualified">
 
-    <element name="TouristVouchers">
+    <element name="Voucher" type="tns:Voucher" abstract="true"/>
+    <element name="One-day-voucher" type="tns:OneDayVoucher" substitutionGroup="tns:Voucher"/>
+    <element name="Several-day-voucher" type="tns:SeveralDayVoucher" substitutionGroup="tns:Voucher"/>
+
+    <element name="Tourist-vouchers">
         <complexType>
             <sequence>
-                <element name="Voucher" type="tns:Voucher" minOccurs="1" maxOccurs="unbounded"/>
+                <element ref="tns:Voucher" minOccurs="1" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
@@ -15,44 +19,27 @@
             <element name="country">
                 <simpleType>
                     <restriction base="string">
-                        <pattern value="[a-zA-Z-]"/>
+                        <pattern value="[a-zA-Z\-\s]+"/>
                     </restriction>
                 </simpleType>
             </element>
-
-            <element name="days">
-                <simpleType>
-                    <restriction base="int">
-                        <minInclusive value="1"/>
-                        <maxInclusive value="365"/>
-                    </restriction>
-                </simpleType>
-            </element>
-            <element name="nights">
-                <simpleType>
-                    <restriction base="int">
-                        <minInclusive value="0"/>
-                        <maxInclusive value="365"/>
-                    </restriction>
-                </simpleType>
-            </element>
-            <element name="transport" type="tns:TransportType"/>
-            <element name="hotel-characteristic" type="tns:HotelCharacteristic"/>
+            <element name="transport" type="tns:TransportType" default="Plane"/>
+            <element name="date" type="date" default="2020-10-06"/>
             <element name="cost" type="tns:Cost"/>
         </sequence>
         <attribute name="name" use="required">
             <simpleType>
-                <restriction base="string">
-                    <pattern value="[a-zA-Z0-9-]+"/>
+                <restriction base="ID">
+                    <pattern value="[a-zA-Z0-9\-]+"/>
                 </restriction>
             </simpleType>
         </attribute>
-        <attribute name="type" use="required">
+        <attribute name="type" use="optional" default="Recreation">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="Cruise"/>
                     <enumeration value="Excursion"/>
-                    <enumeration value="New Year"/>
+                    <enumeration value="New-Year"/>
                     <enumeration value="Recreation"/>
                     <enumeration value="Shopping"/>
                     <enumeration value="Therapy"/>
@@ -61,16 +48,53 @@
         </attribute>
     </complexType>
 
+    <complexType name="SeveralDayVoucher">
+        <complexContent>
+            <extension base="tns:Voucher">
+                <sequence>
+                    <element name="days">
+                        <simpleType>
+                            <restriction base="int">
+                                <minInclusive value="1"/>
+                                <maxInclusive value="365"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="nights">
+                        <simpleType>
+                            <restriction base="int">
+                                <minInclusive value="0"/>
+                                <maxInclusive value="365"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="hotel-characteristic" type="tns:Hotel-characteristic"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="OneDayVoucher">
+        <complexContent>
+            <extension base="tns:Voucher">
+                <sequence>
+                    <element name="is-with-lunch" type="boolean" default="false"/>
+                    <element name="is-with-guide" type="boolean" default="false"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
     <simpleType name="TransportType">
         <restriction base="string">
             <enumeration value="Bus"/>
-            <enumeration value="Plain"/>
+            <enumeration value="Plane"/>
             <enumeration value="Ship"/>
             <enumeration value="Train"/>
         </restriction>
     </simpleType>
 
-    <complexType name="HotelCharacteristic">
+    <complexType name="Hotel-characteristic">
         <sequence>
             <element name="stars">
                 <simpleType>
@@ -91,18 +115,18 @@
                     </restriction>
                 </simpleType>
             </element>
-            <element name="hotel-room" type="tns:HotelRoom"/>
+            <element name="hotel-room" type="tns:Hotel-room"/>
         </sequence>
     </complexType>
 
     <simpleType name="Cost">
         <restriction base="decimal">
-            <minInclusive value="0.1"></minInclusive>
-            <maxInclusive value="999999.9"></maxInclusive>
+            <minInclusive value="0.1"/>
+            <maxInclusive value="999999.9"/>
         </restriction>
     </simpleType>
 
-    <complexType name="HotelRoom">
+    <complexType name="Hotel-room">
         <sequence>
             <element name="guests-number">
                 <simpleType>
@@ -112,10 +136,10 @@
                     </restriction>
                 </simpleType>
             </element>
-            <element name="tv" type="boolean"/>
-            <element name="air-conditioning" type="boolean"/>
-            <element name="wifi" type="boolean"/>
-            <element name="refrigerator" type="boolean"/>
+            <element name="tv" type="boolean" default="false"/>
+            <element name="air-conditioning" type="boolean" default="false"/>
+            <element name="wifi" type="boolean" default="false"/>
+            <element name="refrigerator" type="boolean" default="false"/>
         </sequence>
     </complexType>
 </schema>

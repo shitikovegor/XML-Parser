@@ -3,7 +3,10 @@ package com.shitikov.parserxml.entity;
 public class HotelCharacteristic {
     private int stars;
     private FoodType foodType;
-    private HotelRoom hotelRoom;
+    private HotelRoom hotelRoom = new HotelRoom();
+
+    public HotelCharacteristic() {
+    }
 
     public HotelCharacteristic(int stars, FoodType foodType, HotelRoom hotelRoom) {
         this.stars = stars;
@@ -71,7 +74,7 @@ public class HotelCharacteristic {
         final StringBuilder sb = new StringBuilder("HotelCharacteristic{");
         sb.append("stars=").append(stars);
         sb.append(", foodType=").append(foodType);
-        sb.append(", hotelRoom=").append(hotelRoom);
+        sb.append(", ").append(hotelRoom);
         sb.append('}');
         return sb.toString();
     }

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TouristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xmlns="http://www.example.com/TouristVouchers"
-                 xsi:schemaLocation="http://www.example.com/TouristVouchers TouristVouchers.xsd">
+<Tourist-vouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns="http://www.example.com/TouristVouchers"
+                  xsi:schemaLocation="http://www.example.com/TouristVouchers TouristVouchers.xsd">
 
-    <Voucher name="Spain tour" type="Excursion">
+    <Several-day-voucher name="Spain-tour">
         <country>Spain</country>
+        <transport>Bus</transport>
+        <date>2020-10-05</date>
+        <cost>500</cost>
         <days>3</days>
         <nights>4</nights>
-        <transport>Bus</transport>
         <hotel-characteristic>
             <stars>4</stars>
             <food-type>BB</food-type>
@@ -19,14 +21,15 @@
                 <refrigerator>false</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>500</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Turkey tour" type="Recreation">
+    <Several-day-voucher name="Turkey-tour" type="Recreation">
         <country>Turkey</country>
+        <transport></transport>
+        <date>2020-10-09</date>
+        <cost>650</cost>
         <days>7</days>
         <nights>8</nights>
-        <transport>Plain</transport>
         <hotel-characteristic>
             <stars>5</stars>
             <food-type>AI</food-type>
@@ -38,14 +41,15 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>650</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Lviv weekend" type="Excursion">
+    <Several-day-voucher name="Lviv-weekend" type="Excursion">
         <country>Ukraine</country>
+        <transport>Bus</transport>
+        <date>2020-10-15</date>
+        <cost>150</cost>
         <days>2</days>
         <nights>3</nights>
-        <transport>Bus</transport>
         <hotel-characteristic>
             <stars>3</stars>
             <food-type>SC</food-type>
@@ -57,14 +61,15 @@
                 <refrigerator>false</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>120</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Sanatorium" type="Therapy">
+    <Several-day-voucher name="Sanatorium" type="Therapy">
         <country>Belarus</country>
-        <days>0</days>
-        <nights>5</nights>
         <transport>Bus</transport>
+        <date>2020-10-16</date>
+        <cost>350</cost>
+        <days>4</days>
+        <nights>5</nights>
         <hotel-characteristic>
             <stars>3</stars>
             <food-type>FB</food-type>
@@ -76,14 +81,15 @@
                 <refrigerator>false</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>350.5</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="New Year in Warsaw" type="New Year">
+    <Several-day-voucher name="New-Year-in-Warsaw" type="New-Year">
         <country>Poland</country>
+        <transport>Bus</transport>
+        <date></date>
+        <cost>199</cost>
         <days>2</days>
         <nights>2</nights>
-        <transport>Car</transport>
         <hotel-characteristic>
             <stars>2</stars>
             <food-type>BB</food-type>
@@ -95,33 +101,35 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>199.9</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Vacation-tour" type="Recreation">
+    <Several-day-voucher name="Vacation-tour" type="Recreation">
         <country>Egypt</country>
+        <transport>Plane</transport>
+        <date>2020-10-25</date>
+        <cost>1500</cost>
         <days>7</days>
         <nights>8</nights>
-        <transport>Plain</transport>
         <hotel-characteristic>
-            <stars>7</stars>
+            <stars>5</stars>
             <food-type>AI</food-type>
             <hotel-room>
                 <guests-number>2</guests-number>
                 <tv>true</tv>
                 <air-conditioning>true</air-conditioning>
                 <wifi>true</wifi>
-                <refrigerator>yes</refrigerator>
+                <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>1500</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Weekend tour$" type="Cruise">
+    <Several-day-voucher name="Weekend-tour" type="Cruise">
         <country>Greece</country>
+        <transport>Ship</transport>
+        <date>2020-10-09</date>
+        <cost>352</cost>
         <days>2</days>
         <nights>3</nights>
-        <transport>Ship</transport>
         <hotel-characteristic>
             <stars>3</stars>
             <food-type>FB</food-type>
@@ -133,33 +141,24 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>0</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="" type="Shopping">
+    <One-day-voucher name="One-day-shopping" type="Shopping">
         <country>Italy</country>
-        <days>1</days>
-        <nights>366</nights>
         <transport>Bus</transport>
-        <hotel-characteristic>
-            <stars>3</stars>
-            <food-type>SC</food-type>
-            <hotel-room>
-                <guests-number>1</guests-number>
-                <tv>true</tv>
-                <air-conditioning>true</air-conditioning>
-                <wifi>false</wifi>
-                <refrigerator>true</refrigerator>
-            </hotel-room>
-        </hotel-characteristic>
-        <cost>99.9</cost>
-    </Voucher>
+        <date>2020-10-09</date>
+        <cost>99</cost>
+        <is-with-lunch>true</is-with-lunch>
+        <is-with-guide>false</is-with-guide>
+    </One-day-voucher>
 
-    <Voucher name="Sea tour" type="Recreation">
+    <Several-day-voucher name="Sea-tour" type="Recreation">
         <country>Spain</country>
+        <transport>Plane</transport>
+        <date>2020-10-19</date>
+        <cost>785</cost>
         <days>6</days>
         <nights>7</nights>
-        <transport>Plain</transport>
         <hotel-characteristic>
             <stars>5</stars>
             <food-type>FB</food-type>
@@ -171,33 +170,24 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>785</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Excursion tour" type="Excursion">
+    <One-day-voucher name="Excursion-tour" type="Excursion">
         <country>Belarus</country>
-        <days>1</days>
-        <nights>0</nights>
         <transport>Bus</transport>
-        <hotel-characteristic>
-            <stars></stars>
-            <food-type></food-type>
-            <hotel-room>
-                <guests-number></guests-number>
-                <tv></tv>
-                <air-conditioning></air-conditioning>
-                <wifi></wifi>
-                <refrigerator></refrigerator>
-            </hotel-room>
-        </hotel-characteristic>
+        <date>2020-10-06</date>
         <cost>65</cost>
-    </Voucher>
+        <is-with-lunch>true</is-with-lunch>
+        <is-with-guide>true</is-with-guide>
+    </One-day-voucher>
 
-    <Voucher name="Therapy tour" type="Therapy">
+    <Several-day-voucher name="Therapy-tour" type="Therapy">
         <country>Israel</country>
+        <transport>Train</transport>
+        <date>2020-10-20</date>
+        <cost>1865</cost>
         <days>3</days>
         <nights>4</nights>
-        <transport>Train</transport>
         <hotel-characteristic>
             <stars>4</stars>
             <food-type>FB</food-type>
@@ -209,14 +199,15 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>1865</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Therapy tour" type="Therapy">
+    <Several-day-voucher name="Therapy-tour-1" type="Therapy">
         <country>Belarus</country>
+        <transport>Bus</transport>
+        <date>2020-10-30</date>
+        <cost>150</cost>
         <days>15</days>
         <nights>15</nights>
-        <transport>Bus</transport>
         <hotel-characteristic>
             <stars>1</stars>
             <food-type>FB</food-type>
@@ -228,14 +219,15 @@
                 <refrigerator>false</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>150</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Cyprus tour" type="Recreation">
+    <Several-day-voucher name="Cyprus-tour" type="Recreation">
         <country>Cyprus</country>
+        <transport>Plane</transport>
+        <date>2020-10-12</date>
+        <cost>840</cost>
         <days>10</days>
         <nights>11</nights>
-        <transport>Plain</transport>
         <hotel-characteristic>
             <stars>4</stars>
             <food-type>AI</food-type>
@@ -247,52 +239,33 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>840</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Minsk excursion" type="Excursion">
+    <One-day-voucher name="Minsk-excursion" type="Excursion">
         <country>Belarus</country>
-        <days>1</days>
-        <nights>0</nights>
         <transport>Bus</transport>
-        <hotel-characteristic>
-            <stars></stars>
-            <food-type></food-type>
-            <hotel-room>
-                <guests-number></guests-number>
-                <tv></tv>
-                <air-conditioning></air-conditioning>
-                <wifi></wifi>
-                <refrigerator></refrigerator>
-            </hotel-room>
-        </hotel-characteristic>
+        <date>2020-10-12</date>
         <cost>25</cost>
-    </Voucher>
+        <is-with-lunch/>
+        <is-with-guide>true</is-with-guide>
+    </One-day-voucher>
 
-    <Voucher name="Shopping tour" type="Shopping">
+    <One-day-voucher name="Shopping-tour-Poland" type="Shopping">
         <country>Poland</country>
-        <days>2</days>
-        <nights>3</nights>
         <transport>Bus</transport>
-        <hotel-characteristic>
-            <stars>3</stars>
-            <food-type>SC</food-type>
-            <hotel-room>
-                <guests-number>1</guests-number>
-                <tv>true</tv>
-                <air-conditioning>true</air-conditioning>
-                <wifi>true</wifi>
-                <refrigerator>false</refrigerator>
-            </hotel-room>
-        </hotel-characteristic>
+        <date>2020-10-05</date>
         <cost>86</cost>
-    </Voucher>
+        <is-with-lunch>true</is-with-lunch>
+        <is-with-guide/>
+    </One-day-voucher>
 
-    <Voucher name="New year in Prague" type="Christmas">
+    <Several-day-voucher name="New-year-in-Prague" type="New-Year">
         <country>Czech</country>
+        <transport>Bus</transport>
+        <date>2020-10-15</date>
+        <cost>320</cost>
         <days>3</days>
         <nights>4</nights>
-        <transport>Bus</transport>
         <hotel-characteristic>
             <stars>3</stars>
             <food-type>HB</food-type>
@@ -304,14 +277,15 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>320</cost>
-    </Voucher>
+    </Several-day-voucher>
 
-    <Voucher name="Gold ring tour" type="Excursion">
-        <country></country>
+    <Several-day-voucher name="Gold-ring-tour" type="Excursion">
+        <country>Russia</country>
+        <transport>Bus</transport>
+        <date>2020-10-23</date>
+        <cost>350</cost>
         <days>3</days>
         <nights>4</nights>
-        <transport>Bus</transport>
         <hotel-characteristic>
             <stars>2</stars>
             <food-type>SC</food-type>
@@ -323,6 +297,5 @@
                 <refrigerator>true</refrigerator>
             </hotel-room>
         </hotel-characteristic>
-        <cost>350</cost>
-    </Voucher>
-</TouristVouchers>
+    </Several-day-voucher>
+</Tourist-vouchers>
